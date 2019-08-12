@@ -1,0 +1,5 @@
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action text-dark" routerLink="/dashboard">Dashboard</a>
+  <a href="#" class="list-group-item list-group-item-action text-dark" routerLink="/profile">Profile</a>
+  <a *ngIf="authService.currentUser.role=='admin'" href="#" class="list-group-item list-group-item-action text-dark" routerLink="/admin/users">Users</a>
+</div>

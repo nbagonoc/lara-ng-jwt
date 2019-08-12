@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-8">
+      <div class="card" *ngIf="user">
+        <div class="card-header text-capitalize">
+          Your Profile
+        </div>
+        <div class="card-body">
+          <h3 class="text-capitalize">{{user.name}}</h3>
+          <p class="mb-0">Email: {{user.email}}</p>
+          <p class="mb-0">Role: {{user.role}}</p>
+          <hr>
+          <a href="#" [routerLink]="['/profile/update/', user._id]" class="btn btn-outline-success btn-sm">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
