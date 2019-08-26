@@ -9,7 +9,8 @@ import "rxjs/add/operator/map";
 export class AuthService {
   authToken: any;
   user: any;
-  url = "http://lara-jwt.com/api/auth";
+  // url = "http://lara-jwt.com/api/auth";
+  url = "http://lara-pass.com/api/auth";
   // url = "http://localhost:5000/api/auth";
   // url = "api/auth";
 
@@ -54,15 +55,21 @@ export class AuthService {
   }
 
   isValidToken() {
+    // const access_token = this.getToken();
+    // if (access_token) {
+    //   const payload = this.payload(access_token);
+    //   if (payload) {
+    //     return payload.iss == this.url + "/login" ? true : false;
+    //     // console.log(payload.iss);
+    //   }
+    // }
+    
     const access_token = this.getToken();
     if (access_token) {
-      const payload = this.payload(access_token);
-      if (payload) {
-        return payload.iss == this.url + "/login" ? true : false;
-        // console.log(payload.iss);
-      }
+      return true
+    } else {
+      return false
     }
-    return false;
   }
 
   // get the payload(middle of the JWT). JWT has 3 parts. We only need to grab the middle part

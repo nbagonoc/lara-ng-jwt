@@ -8,7 +8,8 @@ import "rxjs/add/operator/map";
 export class UsersService {
   authToken: any;
   user: any;
-  url = "http://lara-jwt.com/api/auth";
+  // url = "http://lara-jwt.com/api/auth";
+  url = "http://lara-pass.com/api";
   // url = "http://localhost:5000/api/users";
   // url = "api/auth";
 
@@ -32,7 +33,7 @@ export class UsersService {
       Authorization: `Bearer ${access_token}`
     });
 
-    return this.http.post(this.url + "/me", {
+    return this.http.get(this.url + "/user", {
       headers
     });
   }

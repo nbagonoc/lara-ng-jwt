@@ -12,8 +12,10 @@ export class ProfileComponent implements OnInit {
   constructor(private usersService: UsersService) {}
 
   ngOnInit() {
-    this.usersService.viewUser().subscribe(userDetails => {
-      this.user = (userDetails as any).user;
-    });
+    this.usersService.viewUser().subscribe(
+      data => {
+        this.user = data as any;
+      }
+    );
   }
 }
